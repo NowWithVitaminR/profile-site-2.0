@@ -1,5 +1,20 @@
 {
-  "devDependencies": {
-    "@types/node": "^22.10.2"
-  }
+  "name": "profile-site-2.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NowWithVitaminR/profile-site-2.0.git"
+  },
+  "author": "Kris Kass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NowWithVitaminR/profile-site-2.0/issues"
+  },
+  "homepage": "https://github.com/NowWithVitaminR/profile-site-2.0#readme",
+  "description": ""
 }
