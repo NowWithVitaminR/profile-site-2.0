@@ -16,5 +16,8 @@
     "url": "https://github.com/NowWithVitaminR/profile-site-2.0/issues"
   },
   "homepage": "https://github.com/NowWithVitaminR/profile-site-2.0#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  }
 }
