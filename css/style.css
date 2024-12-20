@@ -25,15 +25,27 @@ body{
     border-right: 1px solid #D7DBDD;
     background-color: #FCFDFD;
 }
-    .sideBar_links{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 95vh;
-    }
-    .sideBar_item {
-        cursor: pointer;
-        padding: 5px 10px;
-        color: #16A2D7;
-        font-size: 12px;
-    }
+.sideBar_links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.sideBar_item {
+    cursor: pointer;
+    color: #16A2D7;
+    font-size: 15px;
+}
+.sideBar_menu{
+    padding-left: 10px;
+}
+.sideBar_contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-bottom: 15px;
+    gap:10px;
+}
+.content_area{
+    display: flex;
+}
