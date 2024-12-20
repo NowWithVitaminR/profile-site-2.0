@@ -1,29 +1,13 @@
 body{
-    display:flex;
+    display: flex;
     margin: 0px;
 }
 .sideBar {
-    /**
-    * This container orders items according to flexbox
-    * rules. By default, this would arrange its children
-    * horizontally. However, the next property...
-    */
     display: flex;
-    /**
-    * ...sets the main axis to be vertical instead of
-    * horizontal, so now the children are laid out
-    * vertically, from top to bottom.
-    */
+    flex: 1;
     flex-direction: column;
-    /**
-    * It will also put as much space as possible
-    * between its children, with the children at either end
-    * laying flush against the container's edges.
-    */
-    height: 100vh;
-    width: 150px;
     border-right: 1px solid #D7DBDD;
-    background-color: #FCFDFD;
+    background-color: #ffffff;
 }
 .sideBar_links{
     display: flex;
@@ -33,7 +17,7 @@ body{
 }
 .sideBar_item {
     cursor: pointer;
-    color: #16A2D7;
+    color: #3e2ed1;
     font-size: 15px;
 }
 .sideBar_menu{
@@ -43,9 +27,22 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding-bottom: 15px;
-    gap:10px;
 }
 .content_area{
-    display: flex;
+    display: grid;
+    flex: 8;
+    width: 100%;
 }
+.content-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr) .5fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    .main-gallery { grid-area: 1 / 1 / 5 / 6;
+    background-color: blue; 
+    }
+    .thumbnail-gallery { grid-area: 5 / 1 / 6 / 6;
+    background-color: red; 
+    }
