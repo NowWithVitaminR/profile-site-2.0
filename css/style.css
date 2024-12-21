@@ -41,8 +41,9 @@ body{
     grid-row-gap: 0px;
     }
     .main-gallery { grid-area: 1 / 1 / 5 / 6;
-    background-color: blue; 
+        background-color: blue; 
     }
     .thumbnail-gallery { grid-area: 5 / 1 / 6 / 6;
-    background-color: red; 
+        min-height: 100px;
+        background-color: red; 
     }

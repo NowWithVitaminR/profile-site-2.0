@@ -1,17 +1,13 @@
 import express from "express";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url))
 const app = express();
 const port = 3000;
 
 app.get("/", (req,res) => {
-    res.send("Hello, World!")
-});
-
-app.post("/register", (req, res) =>{
-    res.sendStatus(201)
-});
-
-app.put("/user/kris", (req, res) =>{
-    res.sendStatus(200)
+    console.log(__dirname + "/index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 app.listen(3000, () => {
