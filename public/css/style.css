@@ -5,6 +5,7 @@ body{
 .sideBar {
     display: flex;
     flex: 1;
+    min-width: fit-content;
     flex-direction: column;
     border-right: 1px solid #D7DBDD;
     background-color: #ffffff;
@@ -17,8 +18,12 @@ body{
 }
 .sideBar_item {
     cursor: pointer;
-    color: #3e2ed1;
+    color: black;
     font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.sideBar_item i{
+    padding: 10px;
 }
 .sideBar_menu{
     padding-left: 10px;
@@ -27,6 +32,10 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: row;
+}
+.logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
 }
 main{
     display: grid;
@@ -47,3 +56,26 @@ main{
         min-height: 100px;
         background-color: red; 
     }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+  
+  .active, .accordion:hover {
+    background-color: #ffffff; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    padding: 0;
+}

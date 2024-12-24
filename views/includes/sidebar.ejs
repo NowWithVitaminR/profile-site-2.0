@@ -1,19 +1,29 @@
 <div class="sideBar">
-    <!-- This section gets pushed to the top-->
-     <div class="sideBar_links">
+    <div class="sideBar_links">
         <div class="sideBar_menu">
-            <div class="logo"><a href="/"><p>KRIS KASS</p></a></div>
-            <div class="sideBar_item"><a href="/about">About me</a></div>
-            <div class="sideBar_item"><a href="/contact">Contact</a></div>
-            <div class="sideBar_item">Account</div>
-            <div class="sideBar_item"><a href="/gallery">Gallery</a></div>
+            <a href="/"><div class="logo"><h2>KRIS KASS</h2></div></a>
+            <a href="/about"><div class="sideBar_item">About me</div></a>
+            <a href="/contact"><div class="sideBar_item">Contact</div></a>
+            <div class="sideBar_item accordion" data-id="gallery">> Gallery</div>
+            <div class="panel">
+                <ul>
+                    <li class="sideBar_item"><a href="/gallery">item 1</a></li>
+                    <li class="sideBar_item">item 2</li>
+                </ul>
+            </div>
+            <div class="sideBar_item accordion" data-id="gallery2">> Gallery 2</div>
+            <div class="panel">
+                <ul>
+                    <li class="sideBar_item">item 3</li>
+                    <li class="sideBar_item">item 4</li>
+                </ul>
+            </div>
         </div>
-        <!-- This section gets pushed to the bottom-->
         <div class="sideBar_contact">
-            <div class="sideBar_item">Mail</div>
-            <div class="sideBar_item">Bluesky</div>
-            <div class="sideBar_item">IG</div>
+            <div class="sideBar_item"><a href="mailto:kris@kriskass.com"><i class="fa-regular fa-envelope"></i></a></div>
+            <div class="sideBar_item"><a href="https://bsky.app/profile/kriskass.com>"><i class="fa-brands fa-bluesky"></i></a></div>
+            <div class="sideBar_item"><a href="https://www.instagram.com/kris.kass/"><i class="fa-brands fa-instagram"></i></a></div>
         </div>
     </div>
+    <script src="/js/menu.js"></script>
 </div>
-
