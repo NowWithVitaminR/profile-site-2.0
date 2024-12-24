@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 app.get("/", (req,res) => {
-    console.log(__dirname + "/public/index.html");
-    res.sendFile(__dirname + "/public/index.html");
+    console.log(__dirname + "/public/index.ejs");
+    res.render(__dirname + "/public/index.ejs");
 });
 
 app.listen(3000, () => {
