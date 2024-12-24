@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 let DefaultPage = "index.ejs";
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
