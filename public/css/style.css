@@ -28,7 +28,7 @@ body{
     justify-content: center;
     flex-direction: row;
 }
-.content_area{
+main{
     display: grid;
     flex: 8;
     width: 100%;

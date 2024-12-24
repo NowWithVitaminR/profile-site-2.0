@@ -5,15 +5,27 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const app = express();
 const port = 3000;
+let DefaultPage = "index.ejs";
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
-app.get("/", (req,res) => {
-    console.log(__dirname + "/public/index.ejs");
-    res.render(__dirname + "/public/index.ejs");
+app.get("/", (req, res) => {
+  res.render(DefaultPage, { PageName: "landing.ejs" });
 });
 
-app.listen(3000, () => {
-    console.log(`Server running on port ${port}.`);
+app.get("/about", (req, res) => { 
+  res.render(DefaultPage, { PageName: "about.ejs" });
+});
+
+app.get("/contact", (req, res) => {
+  res.render(DefaultPage, { PageName: "contact.ejs" });
+});
+
+app.get("/gallery", (req, res) => {
+  res.render(DefaultPage, { PageName: "gallery.ejs" });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
