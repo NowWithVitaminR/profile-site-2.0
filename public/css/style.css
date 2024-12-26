@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     margin: 0px;
 }
@@ -7,10 +7,9 @@ body{
     flex: 1;
     min-width: fit-content;
     flex-direction: column;
-    border-right: 1px solid #D7DBDD;
     background-color: #ffffff;
 }
-.sideBar_links{
+.sideBar_links {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,13 +21,13 @@ body{
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
 }
-.sideBar_item i{
+.sideBar_item i {
     padding: 10px;
 }
-.sideBar_menu{
+.sideBar_menu {
     padding-left: 10px;
 }
-.sideBar_contact{
+.sideBar_contact {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -37,45 +36,84 @@ body{
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
 }
-main{
+main {
     display: grid;
     flex: 8;
     width: 100%;
 }
+
+/* Main container for the gallery */
 .content-gallery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr) .5fr;
+    grid-template-rows: repeat(4, 1fr) 120px; /* Adjusted for thumbnail gallery height */
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
-    .main-gallery { grid-area: 1 / 1 / 5 / 6;
-        background-color: blue; 
-    }
-    .thumbnail-gallery { grid-area: 5 / 1 / 6 / 6;
-        min-height: 100px;
-        background-color: red; 
-    }
+    height: 100vh;
+}
+
+/* Style for main gallery */
+.main-gallery {
+    grid-area: 1 / 1 / 5 / 6;
+    display: flex; /* Ensure the content inside the main-gallery uses flex */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling if the image overflows */
+    background-color: white; 
+    text-align: center;
+}
+
+.main-gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio and fit inside the div */
+    margin: auto;
+}
+
+/* Style for thumbnail gallery */
+.thumbnail-gallery {
+    grid-area: 5 / 1 / 6 / 6;
+    display: flex; /* Allow thumbnails to align horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    padding: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    align-items: center; /* Vertically center thumbnails */
+}
+
+.thumbnail-gallery img {
+    max-height: 100px; /* Restrict thumbnail height */
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.thumbnail-gallery img:hover {
+    transform: scale(1.1); /* Slightly enlarge thumbnail on hover */
+}
+
 a {
     text-decoration: none;
     color: inherit;
 }
-  
-  .active, .accordion:hover {
-    background-color: #ffffff; 
-  }
-  
-  .panel {
+
+.active, .accordion:hover {
+    background-color: #ffffff;
+}
+
+.panel {
     padding: 0 18px;
     display: none;
     background-color: white;
     overflow: hidden;
-  }
-ul{
+}
+
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-li{
+
+li {
     padding: 0;
 }

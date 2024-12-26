@@ -1,7 +1,51 @@
-            <div class="content-gallery">
-                <div class="main-gallery">
-                    gallery test
-                </div>
-                <div class="thumbnail-gallery">
-                </div>
-            </div>
+
+    <div class="content-gallery">
+        <!-- Main Gallery -->
+        <div class="main-gallery" id="main-gallery">
+            <img id="main-image" src="/images/<%= folder %>/<%= images[0] %>" alt="Main Image">
+        </div>
+
+        <!-- Thumbnail Gallery -->
+        <div class="thumbnail-gallery">
+            <% images.forEach(image => { %>
+                <img src="/images/<%= folder %>/<%= image %>" alt="<%= image %>" onclick="showImage(this)">
+            <% }) %>
+        </div>
+    </div>
+
+    <script>
+        const images = <%- JSON.stringify(images) %>; // Array of image filenames
+        const folder = "<%= folder %>"; // Current folder name
+        const mainImage = document.getElementById('main-image');
+        let currentIndex = 0;
+
+        // Function to update the main image
+        function updateMainImage(index) {
+            if (index >= 0 && index < images.length) {
+                mainImage.src = `/images/${folder}/${images[index]}`;
+                mainImage.alt = images[index];
+                currentIndex = index;
+            }
+        }
+
+        // Event listener for arrow keys
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                // Right arrow key - Go to the next image
+                const nextIndex = (currentIndex + 1) % images.length;
+                updateMainImage(nextIndex);
+            } else if (event.key === 'ArrowLeft') {
+                // Left arrow key - Go to the previous image
+                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                updateMainImage(prevIndex);
+            }
+        });
+
+        // Function to load clicked thumbnail into the main gallery
+        function showImage(thumbnail) {
+            const index = images.indexOf(thumbnail.alt);
+            if (index !== -1) {
+                updateMainImage(index);
+            }
+        }
+    </script>
