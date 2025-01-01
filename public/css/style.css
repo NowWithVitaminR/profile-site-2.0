@@ -126,7 +126,9 @@ li {
         overflow: hidden; /* Prevent scrolling and gaps */
         box-sizing: border-box;
     }
-
+    main {
+        align-items: end;
+    }
     body {
         display: flex;
         flex-direction: column;
