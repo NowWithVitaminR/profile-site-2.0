@@ -3,6 +3,23 @@ body {
     margin: 0px;
     background-color: whitesmoke;
 }
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+main {
+    display: grid;
+    flex: 5;
+    align-content: stretch;
+}
 .front-page{
     display: flex;
     flex-direction: row;
@@ -50,11 +67,6 @@ body {
     font-size: 25px;
     margin-right: .5rem;
 }
-main {
-    display: grid;
-    flex: 5;
-    align-content: stretch;
-}
 #copyright {
     text-align: center;
     font-size:10px;
@@ -101,37 +113,19 @@ main {
     margin-right: 10px;
     cursor: pointer;
 }
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .active, .accordion:hover {
     background-color: whitesmoke;
 }
-
 .panel {
     padding: 0 18px;
     display: none;
     overflow: hidden;
 }
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    padding: 0;
-}
-
 /* Style the container/contact section */
 .container {
     border-radius: 5px;
     padding: 10px;
 }
-
 /* Create two columns that float next to eachother */
 .column {
     float: left;
