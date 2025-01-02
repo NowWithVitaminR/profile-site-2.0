@@ -1,13 +1,37 @@
 body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    background-color: whitesmoke;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+main {
+    display: grid;
+    flex: 5;
+    align-content: stretch;
+}
+.front-page{
     display: flex;
     flex-direction: row;
-    margin: 0px;
+    height: 100vh;
+}
+.contact-info {
+    padding: 10px;
 }
 .sideBar {
     display: flex;
     min-width: fit-content;
     flex-direction: column;
-    background-color: #ffffff;
 }
 .sideBar .sideBar_links {
     display: flex;
@@ -42,10 +66,9 @@ body {
     font-size: 25px;
     margin-right: .5rem;
 }
-main {
-    display: grid;
-    flex: 8;
-    width: 100%;
+#copyright {
+    text-align: center;
+    font-size:10px;
 }
 
 /* Main container for the gallery */
@@ -65,7 +88,6 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Prevent scrolling if the image overflows */
-    background-color: white; 
     text-align: center;
 }
 
@@ -81,7 +103,6 @@ main {
     grid-area: 5 / 1 / 6 / 6;
     display: flex; /* Allow thumbnails to align horizontally */
     overflow-x: auto; /* Enable horizontal scrolling if needed */
-    background-color: white;
     box-sizing: border-box;
     align-items: center; /* Vertically center thumbnails */
 }
@@ -91,61 +112,19 @@ main {
     margin-right: 10px;
     cursor: pointer;
 }
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .active, .accordion:hover {
-    background-color: #ffffff;
+    background-color: whitesmoke;
 }
-
 .panel {
     padding: 0 18px;
     display: none;
-    background-color: white;
     overflow: hidden;
 }
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    padding: 0;
-}
-
-/* Style inputs */
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
 /* Style the container/contact section */
 .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 10px;
 }
-
 /* Create two columns that float next to eachother */
 .column {
     float: left;
@@ -159,18 +138,20 @@ input[type=submit]:hover {
     content: "";
     display: table;
     clear: both;
-} 
+}
 
 @media (max-width: 768px) {
     html, body {
         margin: 0;
         padding: 0;
         height: 100%;
-        /* overflow: hidden;  Prevent scrolling and gaps */
         box-sizing: border-box;
     }
-    body {
-        display: flex;
+    .mobile-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+    .front-page {
         flex-direction: column;
     }
 
@@ -191,11 +172,6 @@ input[type=submit]:hover {
         margin-top: 10px;
         margin-left: 0;
         justify-content: center;
-    }
-
-    .break {
-        flex-basis: 100%;
-        height: 0;
     }
 
     .content-gallery {
@@ -227,7 +203,7 @@ input[type=submit]:hover {
     }
 
     .thumbnail-gallery img {
-        height: 90%; /* Adjust thumbnail size to fit within the gallery */
+        height: 95%; /* Adjust thumbnail size to fit within the gallery */
         flex-grow: 0;
         object-fit: contain;
         cursor: pointer;

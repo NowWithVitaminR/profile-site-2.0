@@ -2,10 +2,10 @@ import bodyParser from "body-parser";
 import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import nodemailer from "nodemailer";
-import { validate } from "deep-email-validator";
 import fs from "fs";
 import path from "path";
+//import nodemailer from "nodemailer";
+//import { validate } from "deep-email-validator";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
