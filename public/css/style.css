@@ -3,12 +3,16 @@ body {
     flex-direction: row;
     margin: 0px;
 }
+.contact-info{
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
 .sideBar {
     display: flex;
     flex: 1;
     min-width: fit-content;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #a7a7a7a7;
 }
 .sideBar .sideBar_links {
     display: flex;
@@ -66,7 +70,7 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Prevent scrolling if the image overflows */
-    background-color: white; 
+    background-color: #a7a7a7a7; 
     text-align: center;
 }
 
@@ -82,7 +86,7 @@ main {
     grid-area: 5 / 1 / 6 / 6;
     display: flex; /* Allow thumbnails to align horizontally */
     overflow-x: auto; /* Enable horizontal scrolling if needed */
-    background-color: white;
+    background-color: #a7a7a7a7;
     box-sizing: border-box;
     align-items: center; /* Vertically center thumbnails */
 }
@@ -98,13 +102,12 @@ a {
 }
 
 .active, .accordion:hover {
-    background-color: #ffffff;
+    background-color: #a7a7a7a7;
 }
 
 .panel {
     padding: 0 18px;
     display: none;
-    background-color: white;
     overflow: hidden;
 }
 
@@ -143,7 +146,6 @@ input[type=submit]:hover {
 /* Style the container/contact section */
 .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 10px;
 }
 
