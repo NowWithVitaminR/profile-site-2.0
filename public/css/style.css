@@ -207,9 +207,6 @@ input[type=submit]:hover {
         height: calc(100% - 10%); /* Dynamically adjust for navigation bar height */
         overflow: hidden;
         height: 100%;
-        height: -webkit-fill-available;
-        height: -moz-available;
-        height: fill-available;
     }
 
     .main-gallery {
