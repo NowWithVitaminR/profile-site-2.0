@@ -5,7 +5,7 @@ body {
     margin: 0px;
     background-color: whitesmoke;
 }
-.contact-info p {
+.contact-info {
     padding: 10px;
 }
 .sideBar {
@@ -146,7 +146,6 @@ li {
         margin: 0;
         padding: 0;
         height: 100%;
-        /* overflow: hidden;  Prevent scrolling and gaps */
         box-sizing: border-box;
     }
     body {
@@ -207,7 +206,7 @@ li {
     }
 
     .thumbnail-gallery img {
-        height: 90%; /* Adjust thumbnail size to fit within the gallery */
+        height: 95%; /* Adjust thumbnail size to fit within the gallery */
         flex-grow: 0;
         object-fit: contain;
         cursor: pointer;
