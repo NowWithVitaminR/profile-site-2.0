@@ -170,9 +170,6 @@ input[type=submit]:hover {
         /* overflow: hidden;  Prevent scrolling and gaps */
         box-sizing: border-box;
     }
-    main {
-        align-items: end;
-    }
     body {
         display: flex;
         flex-direction: column;
@@ -209,10 +206,11 @@ input[type=submit]:hover {
         justify-content: space-between;
         height: calc(100% - 10%); /* Dynamically adjust for navigation bar height */
         overflow: hidden;
+        height: -webkit-fill-available;
     }
 
     .main-gallery {
-        flex: 3;
+        flex: 5;
         display: flex;
         justify-content: center;
         align-items: center;
