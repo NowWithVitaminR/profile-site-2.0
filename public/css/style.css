@@ -56,7 +56,7 @@ main {
     grid-template-rows: repeat(4, 1fr) 120px; /* Adjusted for thumbnail gallery height */
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    height: 100%;
+    height: 100vh;
 }
 
 /* Style for main gallery */
