@@ -1,9 +1,12 @@
 body {
-    display: flex;
-    flex-direction: row;
+
     font-family: 'Courier New', Courier, monospace;
     margin: 0px;
     background-color: whitesmoke;
+}
+.front-page{
+    display: flex;
+    flex-direction: row;
 }
 .contact-info {
     padding: 10px;
@@ -139,7 +142,11 @@ li {
     content: "";
     display: table;
     clear: both;
-} 
+}
+
+footer {
+    align-self: flex-end;
+}
 
 @media (max-width: 768px) {
     html, body {
@@ -148,7 +155,11 @@ li {
         height: 100%;
         box-sizing: border-box;
     }
-    body {
+    .mobile-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+    .front-page {
         display: flex;
         flex-direction: column;
     }
@@ -170,11 +181,6 @@ li {
         margin-top: 10px;
         margin-left: 0;
         justify-content: center;
-    }
-
-    .break {
-        flex-basis: 100%;
-        height: 0;
     }
 
     .content-gallery {
