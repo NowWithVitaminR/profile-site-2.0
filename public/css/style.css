@@ -1,18 +1,18 @@
 body {
     display: flex;
     flex-direction: row;
-    margin: 0px;
-}
-.contact-info{
-    padding: 10px;
     font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    background-color: whitesmoke;
+}
+.contact-info p {
+    padding: 10px;
 }
 .sideBar {
     display: flex;
     flex: 1;
     min-width: fit-content;
     flex-direction: column;
-    background-color: #a7a7a7a7;
 }
 .sideBar .sideBar_links {
     display: flex;
@@ -70,7 +70,6 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Prevent scrolling if the image overflows */
-    background-color: #a7a7a7a7; 
     text-align: center;
 }
 
@@ -86,7 +85,6 @@ main {
     grid-area: 5 / 1 / 6 / 6;
     display: flex; /* Allow thumbnails to align horizontally */
     overflow-x: auto; /* Enable horizontal scrolling if needed */
-    background-color: #a7a7a7a7;
     box-sizing: border-box;
     align-items: center; /* Vertically center thumbnails */
 }
@@ -102,7 +100,7 @@ a {
 }
 
 .active, .accordion:hover {
-    background-color: #a7a7a7a7;
+    background-color: whitesmoke;
 }
 
 .panel {
@@ -121,27 +119,6 @@ li {
     padding: 0;
 }
 
-/* Style inputs */
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
 
 /* Style the container/contact section */
 .container {
