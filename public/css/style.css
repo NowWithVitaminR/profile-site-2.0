@@ -166,6 +166,14 @@ main {
     justify-content: flex-start;
     align-items: center;
 }
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#landing img{
+    max-width: 100%;
+}
 @media (max-width: 768px) {
     html, body {
         margin: 0;
