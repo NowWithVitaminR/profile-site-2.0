@@ -1,23 +1,29 @@
-
-    <div class="content-gallery">
-        <!-- Main Gallery -->
-        <div class="main-gallery" id="main-gallery">
-            <img id="main-image" src="/images/<%= folder %>/<%= images[0] %>" alt="Main Image">
-        </div>
-
-        <!-- Thumbnail Gallery -->
-        <div class="thumbnail-gallery">
-            <% images.forEach(image => { %>
-                <img src="/images/<%= folder %>/<%= image %>" alt="<%= image %>" onclick="showImage(this)">
-            <% }) %>
-        </div>
+<div class="content-gallery">
+    <!-- Main Gallery -->
+    <div class="main-gallery" id="main-gallery">
+        <img id="main-image" src="" alt="Main Image">
     </div>
+    <!-- Thumbnail Gallery -->
+    <div class="thumbnail-gallery" id="thumbnail-gallery"></div>
+</div>
 
-    <script>
+<script>
     const images = JSON.parse('<%- JSON.stringify(images) %>'); // Array of image filenames
     const folder = "<%= folder %>"; // Current folder name
     const mainImage = document.getElementById('main-image');
+    const thumbnailGallery = document.getElementById('thumbnail-gallery'); // Thumbnail container
     let currentIndex = 0;
+
+    // Function to shuffle the images array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // Shuffle the images before displaying them
+    shuffleArray(images);
 
     // Function to update the main image
     function updateMainImage(index) {
@@ -26,6 +32,19 @@
             mainImage.alt = images[index];
             currentIndex = index;
         }
+    }
+
+    // Function to render thumbnails
+    function renderThumbnails() {
+        thumbnailGallery.innerHTML = ''; // Clear existing thumbnails
+        images.forEach((image, index) => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = `/images/${folder}/${image}`;
+            thumbnail.alt = image;
+            thumbnail.classList.add('thumbnail');
+            thumbnail.addEventListener('click', () => updateMainImage(index));
+            thumbnailGallery.appendChild(thumbnail);
+        });
     }
 
     // Event listener for arrow keys
@@ -41,11 +60,7 @@
         }
     });
 
-    // Function to load clicked thumbnail into the main gallery
-    function showImage(thumbnail) {
-        const index = images.indexOf(thumbnail.alt);
-        if (index !== -1) {
-            updateMainImage(index);
-        }
-    }
-    </script>
+    // Initialize the gallery
+    renderThumbnails();
+    updateMainImage(0);
+</script>
