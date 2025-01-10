@@ -1,5 +1,5 @@
 ﻿param(
-    [string]$RootPath = "C:\Users\zazis\OneDrive\Documents\github projects\profile-site-2.0\public\images"
+    [string]$RootPath = ".\public\images"
 )
 
 # Function to create thumbnails
