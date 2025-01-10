@@ -12,6 +12,7 @@
     const folder = "<%= folder %>"; // Current folder name
     const mainImage = document.getElementById('main-image');
     const thumbnailGallery = document.getElementById('thumbnail-gallery'); // Thumbnail container
+    const thumbnailFolderName = "thumbnails";
     let currentIndex = 0;
 
     // Function to shuffle the images array
@@ -39,7 +40,7 @@
         thumbnailGallery.innerHTML = ''; // Clear existing thumbnails
         images.forEach((image, index) => {
             const thumbnail = document.createElement('img');
-            thumbnail.src = `/images/${folder}/${image}`;
+            thumbnail.src = `/images/${folder}/${thumbnailFolderName}/${image}`;
             thumbnail.alt = image;
             thumbnail.classList.add('thumbnail');
             thumbnail.addEventListener('click', () => updateMainImage(index));
