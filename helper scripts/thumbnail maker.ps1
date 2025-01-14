@@ -51,7 +51,8 @@ function Create-Thumbnails {
                     $img.Dispose()
 
                     Write-Host "Created thumbnail for $($image.FullName)"
-                } catch {
+                }
+                catch {
                     Write-Host "Failed to create thumbnail for $($image.FullName): $_" -ForegroundColor Red
                 }
             }
