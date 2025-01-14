@@ -4,7 +4,7 @@
 )
 
 # Function to create thumbnails
-function Create-Thumbnails {
+function CreateThumbnails {
     param(
         [string]$FolderPath
     )
@@ -73,5 +73,5 @@ function Create-Thumbnails {
 
 # Scan directories and process images
 Get-ChildItem -Path $RootPath -Recurse -Directory | Where-Object { $_.Name -ne $thumbFolderName } | ForEach-Object {
-    Create-Thumbnails -FolderPath $_.FullName
+    CreateThumbnails -FolderPath $_.FullName
 }
