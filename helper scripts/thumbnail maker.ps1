@@ -1,5 +1,6 @@
 ﻿param(
-    [string]$RootPath = ".\public\images"
+    [string]$RootPath = ".\public\images",
+    [string]$thumbFolderName = "thumbnails"
 )
 
 # Function to create thumbnails
@@ -16,7 +17,7 @@ function Create-Thumbnails {
 
     if ($images.Count -gt 0) {
         # Create the Thumbnails folder if it doesn't exist
-        $thumbnailFolder = Join-Path -Path $FolderPath -ChildPath "thumbnails"
+        $thumbnailFolder = Join-Path -Path $FolderPath -ChildPath $thumbFolderName
         if (-not (Test-Path -Path $thumbnailFolder)) {
             New-Item -ItemType Directory -Path $thumbnailFolder | Out-Null
         }
@@ -71,6 +72,6 @@ function Create-Thumbnails {
 }
 
 # Scan directories and process images
-Get-ChildItem -Path $RootPath -Recurse -Directory | Where-Object { $_.Name -ne "Thumbnails" } | ForEach-Object {
+Get-ChildItem -Path $RootPath -Recurse -Directory | Where-Object { $_.Name -ne $thumbFolderName } | ForEach-Object {
     Create-Thumbnails -FolderPath $_.FullName
 }
