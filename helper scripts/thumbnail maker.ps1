@@ -1,4 +1,5 @@
-﻿param(
+﻿# if this doesnt work type 'Add-Type -Assembly System.Drawing'
+param(
     [string]$RootPath = ".\public\images",
     [string]$thumbFolderName = "thumbnails"
 )
