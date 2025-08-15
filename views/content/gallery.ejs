@@ -30,6 +30,13 @@
         if (index >= 0 && index < images.length) {
             mainImage.src = `/images/${folder}/${images[index]}`;
             mainImage.alt = images[index];
+            mainImage.classList.add("fade-in");
+            mainImage.onload = () => {
+                mainImage.classList.add("visible");
+            };
+            if (mainImage.complete) {
+                mainImage.classList.add("visible");
+            };
             currentIndex = index;
         }
     }

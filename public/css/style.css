@@ -243,3 +243,10 @@ main {
         cursor: pointer;
     }
 }
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Smooth fade */
+}
+.fade-in.visible {
+  opacity: 1;
+}
