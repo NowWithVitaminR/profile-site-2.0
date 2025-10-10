@@ -1,9 +1,9 @@
-﻿# if this doesnt work type 'Add-Type -Assembly System.Drawing'
+﻿
 param(
     [string]$RootPath = ".\public\images",
     [string]$thumbFolderName = "thumbnails"
 )
-
+Add-Type -Assembly System.Drawing
 # Function to create thumbnails
 function CreateThumbnails {
     param(
