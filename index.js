@@ -6,13 +6,17 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import path from "path";
-//import nodemailer from "nodemailer";
-//import { validate } from "deep-email-validator";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 let DefaultPage = "index.ejs";
+
+const isProd = process.env.NODE_ENV === "production";
+
+// EJS
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // Security Headers
 app.use((req, res, next) => {
@@ -35,20 +39,21 @@ app.use(
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net",
           "https://static.cloudflareinsights.com",
-          (req, res) => `'nonce-${res.locals.cspNonce}'`
+          (req, res) => `'nonce-${res.locals.cspNonce}'`,
         ],
-        "style-src": [
-          "'self'",
-          "https://cdnjs.cloudflare.com",
-          "https://cdn.jsdelivr.net"
-        ],
-        "connect-src": [
-          "'self'",
-          "https://static.cloudflareinsights.com"
-        ],
-        
-      },
-    },
+
+        "style-src": ["'self'", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net"],
+
+        // Important for Font Awesome webfonts
+        "font-src": ["'self'", "https://cdnjs.cloudflare.com", "data:"],
+
+        // Images + data URIs (favicons, etc.)
+        "img-src": ["'self'", "data:"],
+
+        // Cloudflare analytics beacon calls
+        "connect-src": ["'self'", "https://cloudflareinsights.com"],
+      }
+    }
   })
 );
 
