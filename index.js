@@ -34,13 +34,18 @@ app.use(
           "'self'",
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net",
-          (req, res) => `'nonce-${res.locals.cspNonce}'`,
+          "https://static.cloudflareinsights.com",
+          (req, res) => `'nonce-${res.locals.cspNonce}'`
         ],
         "style-src": [
           "'self'",
           "https://cdnjs.cloudflare.com",
           "https://cdn.jsdelivr.net"
         ],
+        "connect-src": [
+          "'self'",
+          "https://static.cloudflareinsights.com"
+        ]
       },
     },
   })
