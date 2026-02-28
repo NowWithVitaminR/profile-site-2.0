@@ -6,7 +6,7 @@
     <!-- Thumbnail Gallery -->
     <div class="thumbnail-gallery" id="thumbnail-gallery"></div>
 </div>
-<script>
+<script nonce="<%= cspNonce %>">
     const images = JSON.parse('<%- JSON.stringify(images) %>'); // Array of image filenames
     const folder = "<%= folder %>"; // Current folder name
     const mainImage = document.getElementById('main-image');

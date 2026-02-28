@@ -1,5 +1,7 @@
 import bodyParser from "body-parser";
 import express from "express";
+import helmet from "helmet";
+import crypto from "crypto";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
@@ -10,7 +12,35 @@ import path from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
+const isProd = process.env.NODE_ENV === "production";
 let DefaultPage = "index.ejs";
+
+// Security Headers
+app.use((req, res, next) => {
+  res.locals.cspNonce = crypto.randomBytes(16).toString("base64");
+  next();
+});
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        "script-src": [
+          "'self'",
+          "https://cdnjs.cloudflare.com",
+          "https://cdn.jsdelivr.net",
+          (req, res) => `'nonce-${res.locals.cspNonce}'`,
+        ],
+        "style-src": [
+          "'self'",
+          "https://cdnjs.cloudflare.com",
+          "https://cdn.jsdelivr.net"
+        ],
+      },
+    },
+  })
+);
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
