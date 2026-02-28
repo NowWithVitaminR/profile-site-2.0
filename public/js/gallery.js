@@ -35,6 +35,8 @@ function updateMainImage(index) {
   if (index >= 0 && index < images.length) {
     mainImage.src = `/images/${folder}/${images[index]}`;
     mainImage.alt = images[index];
+    mainImage.decoding = "async";
+    mainImage.fetchPriority = "high";
 
     // restart animation cleanly
     mainImage.classList.remove("visible");
@@ -64,6 +66,9 @@ function renderThumbnails() {
     const thumbnail = document.createElement("img");
     thumbnail.src = `/images/${folder}/${thumbnailFolderName}/${image}`;
     thumbnail.alt = image;
+    thumbnail.loading = "lazy";
+    thumbnail.decoding = "async";
+    thumbnail.fetchPriority = "low";
     thumbnail.classList.add("thumbnail");
     thumbnail.addEventListener("click", () => updateMainImage(index));
     thumbnailGallery.appendChild(thumbnail);
