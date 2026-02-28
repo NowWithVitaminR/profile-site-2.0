@@ -34,6 +34,7 @@ app.use(
     contentSecurityPolicy: {
       useDefaults: true,
       directives: {
+        "default-src": ["'none'"],
         "script-src": [
           "'self'",
           "https://cdnjs.cloudflare.com",
@@ -41,15 +42,11 @@ app.use(
           "https://static.cloudflareinsights.com",
           (req, res) => `'nonce-${res.locals.cspNonce}'`,
         ],
-
         "style-src": ["'self'", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net"],
-
         // Important for Font Awesome webfonts
         "font-src": ["'self'", "https://cdnjs.cloudflare.com", "data:"],
-
         // Images + data URIs (favicons, etc.)
         "img-src": ["'self'", "data:"],
-
         // Cloudflare analytics beacon calls
         "connect-src": ["'self'", "https://cloudflareinsights.com"],
       }
