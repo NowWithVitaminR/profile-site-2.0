@@ -45,7 +45,8 @@ app.use(
         "connect-src": [
           "'self'",
           "https://static.cloudflareinsights.com"
-        ]
+        ],
+        
       },
     },
   })
