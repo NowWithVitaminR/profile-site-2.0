@@ -12,7 +12,6 @@ import path from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
-const isProd = process.env.NODE_ENV === "production";
 let DefaultPage = "index.ejs";
 
 // Security Headers
@@ -23,6 +22,11 @@ app.use((req, res, next) => {
 
 app.use(
   helmet({
+    hsts: {
+      maxAge: 31536000,
+      includeSubDomains: true,
+      preload: false
+    },
     contentSecurityPolicy: {
       useDefaults: true,
       directives: {
