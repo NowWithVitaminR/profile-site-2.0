@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 app.use(
   helmet({
     hsts: {
-      maxAge: 31536000,
+      maxAge: 63072000,
       includeSubDomains: true,
       preload: false
     },
