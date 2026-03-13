@@ -35,6 +35,7 @@ app.use(
       useDefaults: true,
       directives: {
         "default-src": ["'none'"],
+        "manifest-src": ["'self'"],
         "script-src": [
           "'self'",
           "https://cdnjs.cloudflare.com",
@@ -48,7 +49,7 @@ app.use(
         // Images + data URIs (favicons, etc.)
         "img-src": ["'self'", "data:"],
         // Cloudflare analytics beacon calls
-        "connect-src": ["'self'", "https://cloudflareinsights.com"],
+        "connect-src": ["'self'", "https://cloudflareinsights.com", "https://cdn.jsdelivr.net"],
       }
     }
   })
