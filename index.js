@@ -33,6 +33,7 @@ app.use(
     },
     contentSecurityPolicy: {
       useDefaults: true,
+      upgradeInsecureRequests: isProd,
       directives: {
         "default-src": ["'none'"],
         "manifest-src": ["'self'"],
