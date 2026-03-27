@@ -53,13 +53,27 @@ app.use(
           "https://static.cloudflareinsights.com",
           (req, res) => `'nonce-${res.locals.cspNonce}'`,
         ],
-        "style-src": ["'self'", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net"],
+        "style-src": ["'self'",
+          "https://cdnjs.cloudflare.com",
+          "https://cdn.jsdelivr.net"
+        ],
         // Important for Font Awesome webfonts
-        "font-src": ["'self'", "https://cdnjs.cloudflare.com", "data:"],
+        "font-src": [
+          "'self'",
+          "https://cdnjs.cloudflare.com",
+          "data:"
+        ],
         // Images + data URIs (favicons, etc.)
-        "img-src": ["'self'", "data:"],
+        "img-src": [
+          "'self'",
+          "data:"
+        ],
         // Cloudflare analytics beacon calls
-        "connect-src": ["'self'", "https://cloudflareinsights.com", "https://cdn.jsdelivr.net"],
+        "connect-src": [
+          "'self'",
+          "https://cloudflareinsights.com",
+          "https://cdn.jsdelivr.net"
+        ],
       }
     }
   })
