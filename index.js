@@ -17,6 +17,15 @@ const isProd = process.env.NODE_ENV === "production";
 // EJS
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.set('trust proxy', true);
+
+//https
+app.use((req, res, next) => {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(301, 'https://' + req.headers.host + req.url);
+  }
+  next();
+});
 
 // Security Headers
 app.use((req, res, next) => {
@@ -59,6 +68,7 @@ app.use(
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
 
 // routes
 app.get("/", (req, res) => {
