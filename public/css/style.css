@@ -30,8 +30,8 @@ main {
 }
 .sideBar {
     display: flex;
-    min-width: -webkit-fill-available;
     min-width: fit-content;
+    min-width: -webkit-fill-available;
     flex-direction: column;
 }
 .sideBar .sideBar_links {
