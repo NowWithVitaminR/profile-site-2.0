@@ -19,6 +19,9 @@
     "helmet": "^8.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^1.14.10"
+  },
+  "allowScripts": {
+    "nodemon@1.19.4": true
   }
 }
